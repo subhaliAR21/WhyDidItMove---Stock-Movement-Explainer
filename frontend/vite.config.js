@@ -7,5 +7,8 @@ export default defineConfig({
     proxy: {
       '/analyze': 'http://localhost:8000'
     }
+  },
+  build: {
+    outDir: 'dist'
   }
 })

@@ -16,7 +16,8 @@ function App() {
     setData(null)
 
     try {
-      const response = await axios.get(`/analyze/${ticker}`)
+      const BASE_URL = import.meta.env.VITE_API_URL || ''
+      const response = await axios.get(`${BASE_URL}/analyze/${ticker}`)
       setData(response.data)
     } catch (err) {
       setError('Could not fetch data. Check ticker and try again.')
