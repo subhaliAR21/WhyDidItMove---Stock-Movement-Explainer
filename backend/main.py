@@ -11,16 +11,14 @@ load_dotenv()
 
 app = FastAPI()
 
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://tender-celebration-production-f279.up.railway.app",
-        "http://localhost:5173"
-    ],
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
